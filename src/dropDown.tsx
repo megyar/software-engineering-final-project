@@ -1,12 +1,26 @@
 export {};
 import React from "react";
 
-<div className="dropdown">
-    <button className="dropbtn">Furniture</button>
-    <div className="dropdown-content">
-        <a href="#">Beds</a>
-        <a href="#">Chairs</a>
-        <a href="#">Couches</a>
-        <a href="#">Tables</a>
-    </div>
-</div>;
+type DropDownProps = {
+    black: boolean;
+};
+
+const DropDown: React.FC<DropDownProps> = (props) => {
+    const fill = props.black ? "black" : "white";
+    return (
+        <nav>
+            <li className="hov">
+                Furniture
+                <ul className="main">
+                    <li>Beds</li>
+                    <li>Chairs</li>
+                    <li>Couches</li>
+                    <li>Tables</li>
+                    <li>Decoration</li>
+                </ul>
+                {props.children};
+            </li>
+        </nav>
+    );
+};
+export default DropDown;
