@@ -8,7 +8,7 @@ import { useDrop } from "react-dnd";
 import { Box } from "./Box";
 import type { DragItem } from "./interfaces";
 import { ItemTypes } from "./ItemTypes";
-import Bed1 from "./Furniture/bed 1.jpg";
+// import Bed1 from "./Furniture/bed 1.jpg";
 
 const styles: CSSProperties = {
     width: 300,
@@ -22,7 +22,14 @@ export interface ContainerProps {
 }
 
 export interface ContainerState {
-    boxes: { [key: string]: { top: number; left: number; title: string; img: Object} };
+    boxes: {
+        [key: string]: {
+            top: number;
+            left: number;
+            title: string;
+            //img: Object;
+        };
+    };
 }
 
 export const BoardSquare: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
@@ -31,12 +38,12 @@ export const BoardSquare: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
             top: number;
             left: number;
             title: string;
-            img: Object;
+            // img: Object;
         };
     }>({
-        a: { top: 20, left: 80, title: "Drag me around", img: Bed1},
-        b: { top: 180, left: 20, title: "Drag me too", img: Bed1 },
-        c: { top: 200, left: 40, title: "new", img: Bed1 }
+        a: { top: 20, left: 80, title: "Drag me around" },
+        b: { top: 180, left: 20, title: "Drag me too" },
+        c: { top: 200, left: 40, title: "new" }
     });
 
     const moveBox = useCallback(
