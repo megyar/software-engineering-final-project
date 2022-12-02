@@ -1,6 +1,6 @@
 import React from "react";
 import type { CSSProperties, FC, ReactNode } from "react";
-import { useDrag } from "react-dnd";
+import { DragSourceMonitor, useDrag } from "react-dnd";
 
 import { ItemTypes } from "./ItemTypes";
 
@@ -31,7 +31,7 @@ export const Box: FC<BoxProps> = ({
         () => ({
             type: ItemTypes.BOX,
             item: { id, left, top },
-            collect: (monitor) => ({
+            collect: (monitor: DragSourceMonitor) => ({
                 isDragging: monitor.isDragging()
             })
         }),
@@ -52,3 +52,5 @@ export const Box: FC<BoxProps> = ({
         </div>
     );
 };
+
+export default Box;
