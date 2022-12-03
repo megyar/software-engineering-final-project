@@ -2,6 +2,7 @@ import type { FC } from 'react'
 import { useCallback, useState } from 'react'
 
 import { Container } from './Container'
+import { Menu } from './Menu'
 
 export const Example: FC = () => {
   const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
@@ -12,18 +13,9 @@ export const Example: FC = () => {
 
   return (
     <div>
+      <h1> Design Your Room!</h1>
       <Container hideSourceOnDrag={hideSourceOnDrag} />
-      <p>
-        <label htmlFor="hideSourceOnDrag">
-          <input
-            id="hideSourceOnDrag"
-            type="checkbox"
-            checked={hideSourceOnDrag}
-            onChange={toggle}
-          />
-          <small>Hide the source item while dragging</small>
-        </label>
-      </p>
+      <Menu hideSourceOnDrag={hideSourceOnDrag} />
     </div>
   )
 }

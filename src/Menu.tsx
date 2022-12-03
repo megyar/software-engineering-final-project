@@ -10,20 +10,20 @@ import { ItemTypes } from './ItemTypes'
 
 const styles: CSSProperties = {
   width: 1000,
-  height: 600,
+  height: 100,
   border: '1px solid black',
   position: 'relative',
 }
 
-export interface ContainerProps {
+export interface MenuProps {
   hideSourceOnDrag: boolean
 }
 
-export interface ContainerState {
+export interface MenuState {
   boxes: { [key: string]: { top: number; left: number; title: string } }
 }
 
-export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
+export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
   const [boxes, setBoxes] = useState<{
     [key: string]: {
       top: number
@@ -31,8 +31,8 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
       title: string
     }
   }>({
-    a: { top: 20, left: 80, title: 'Drag me around' },
-    b: { top: 180, left: 20, title: 'Drag me too' },
+    a: { top: 10, left: 10, title: 'picture menu ' },
+    b: { top: 50, left: 10, title: 'bed for ex' },
   })
 
   const moveBox = useCallback(
@@ -76,7 +76,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
             id={key}
             left={left}
             top={top}
-            hideSourceOnDrag={hideSourceOnDrag}
+            //hideSourceOnDrag={hideSourceOnDrag}
           >
             {title}
           </Box>
