@@ -31,8 +31,8 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
       title: string
     }
   }>({
-    a: { top: 20, left: 80, title: 'Drag me around' },
-    b: { top: 180, left: 20, title: 'Drag me too' },
+    a: { top: 20, left: 80, title: 'testing' },
+    //b: { top: 180, left: 20, title: 'Drag me too' },
   })
 
   const moveBox = useCallback(
@@ -76,7 +76,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
             id={key}
             left={left}
             top={top}
-            hideSourceOnDrag={hideSourceOnDrag}
+            //hideSourceOnDrag={hideSourceOnDrag}
           >
             {title}
           </Box>
