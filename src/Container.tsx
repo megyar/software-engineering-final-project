@@ -8,6 +8,9 @@ import { Box } from './Box'
 import type { DragItem } from './interfaces'
 import { ItemTypes } from './ItemTypes'
 
+import { chair1 } from './Components/furniture'
+//import { types } from '@babel/core'
+
 const styles: CSSProperties = {
   width: 1000,
   height: 600,
@@ -20,7 +23,7 @@ export interface ContainerProps {
 }
 
 export interface ContainerState {
-  boxes: { [key: string]: { top: number; left: number; title: string } }
+  boxes: { [key: string]: { top: number; left: number; pic: string, title: string } }
 }
 
 export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
@@ -28,10 +31,11 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
     [key: string]: {
       top: number
       left: number
+      pic: string
       title: string
     }
   }>({
-    a: { top: 20, left: 80, title: 'testing' },
+    a: { top: 20, left: 80, pic: chair1.picture, title: 'chair 1' },
     //b: { top: 180, left: 20, title: 'Drag me too' },
   })
 
@@ -69,6 +73,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
           top: number
           left: number
           title: string
+          pic: string
         }
         return (
           <Box
@@ -76,6 +81,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
             id={key}
             left={left}
             top={top}
+            pic={key}
             //hideSourceOnDrag={hideSourceOnDrag}
           >
             {title}

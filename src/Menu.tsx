@@ -76,6 +76,7 @@ export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
             id={key}
             left={left}
             top={top}
+            pic={key}
             //hideSourceOnDrag={hideSourceOnDrag}
           >
             {title}

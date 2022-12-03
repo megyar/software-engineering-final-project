@@ -15,6 +15,7 @@ export interface BoxProps {
   id: any
   left: number
   top: number
+  pic: string;
   hideSourceOnDrag?: boolean
   children?: ReactNode
 }
@@ -23,6 +24,7 @@ export const Box: FC<BoxProps> = ({
   id,
   left,
   top,
+  pic,
   hideSourceOnDrag,
   children,
 }) => {

@@ -13,7 +13,7 @@ interface Chair {
     picture: string;
 }
 
-const chair1 = {
+export const chair1 = {
     type: "Dining Room",
     size: "Small",
     pattern: "Solid",
@@ -21,6 +21,7 @@ const chair1 = {
     isComfy: false,
     picture: "src/Furniture/chair 1.jpg" //chair1.picture the picture will show up
 };
+//export default chair1;
 
 const chair2 = {
     type: "Living Room",
