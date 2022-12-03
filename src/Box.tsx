@@ -50,6 +50,7 @@ export const Box: FC<BoxProps> = ({
       data-testid="box"
     >
       {children}
+      {isDragging && 'GET PROPERTIES OF FURNITURE TO SHOW'}
     </div>
   )
 }

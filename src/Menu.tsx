@@ -48,22 +48,22 @@ export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
     [boxes, setBoxes],
   )
 
-  const [, drop] = useDrop(
-    () => ({
-      accept: ItemTypes.BOX,
-      drop(item: DragItem, monitor) {
-        const delta = monitor.getDifferenceFromInitialOffset() as XYCoord
-        const left = Math.round(item.left + delta.x)
-        const top = Math.round(item.top + delta.y)
-        moveBox(item.id, left, top)
-        return undefined
-      },
-    }),
-    [moveBox],
-  )
+  // const [, drop] = useDrop(
+  //   () => ({
+  //     accept: ItemTypes.BOX,
+  //     drop(item: DragItem, monitor) {
+  //       const delta = monitor.getDifferenceFromInitialOffset() as XYCoord
+  //       const left = Math.round(item.left + delta.x)
+  //       const top = Math.round(item.top + delta.y)
+  //       moveBox(item.id, left, top)
+  //       return undefined
+  //     },
+  //   }),
+  //   [moveBox],
+  // )
 
   return (
-    <div ref={drop} style={styles}>
+    <div style={styles}>
       {Object.keys(boxes).map((key) => {
         const { left, top, title } = boxes[key] as {
           top: number
