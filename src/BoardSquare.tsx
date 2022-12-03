@@ -62,7 +62,7 @@ export const BoardSquare: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
     const [, drop] = useDrop(
         () => ({
             accept: ItemTypes.BOX,
-            drop(item: DragItem, monitor) {
+            drop(item: DragItem, monitor: any) {
                 const delta =
                     monitor.getDifferenceFromInitialOffset() as XYCoord;
                 const left = Math.round(item.left + delta.x);

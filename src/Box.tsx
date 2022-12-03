@@ -20,13 +20,8 @@ export interface BoxProps {
     children?: ReactNode;
 }
 
-export const Box: FC<BoxProps> = ({
-    id,
-    left,
-    top,
-    hideSourceOnDrag,
-    children
-}) => {
+export const Box: FC<BoxProps> = (props: BoxProps) => {
+    const { id, left, top, hideSourceOnDrag, children } = props;
     const [{ isDragging }, drag] = useDrag(
         () => ({
             type: ItemTypes.BOX,
