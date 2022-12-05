@@ -6,7 +6,6 @@ import { ItemTypes } from './ItemTypes'
 
 const style: CSSProperties = {
   position: 'absolute',
-  border: '1px dashed gray',
   backgroundColor: 'white',
   padding: '0.5rem 1rem',
   cursor: 'move',

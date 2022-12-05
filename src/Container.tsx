@@ -36,7 +36,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
     }
   }>({
     a: { top: 20, left: 80, pic: chair1.picture, title: '' },
-    b: { top: 180, left: 20, title: 'Drag me too' },
+   // b: { top: 180, left: 20, title: 'Drag me too' },
   })
 
   const moveBox = useCallback(
@@ -56,6 +56,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
     () => ({
       accept: ItemTypes.BOX,
       drop(item: DragItem, monitor) {
+        monitor.getItemType()
         const delta = monitor.getDifferenceFromInitialOffset() as XYCoord
         const left = Math.round(item.left + delta.x)
         const top = Math.round(item.top + delta.y)

@@ -31,7 +31,7 @@ export const FurnitureBox: FC<FurnitureBoxProps> = ({
 }) => {
   const [{ isDragging }, drag] = useDrag(
     () => ({
-      type: ItemTypes.FurnitureBOX,
+      type: ItemTypes.FURNITUREBOX,
       item: { id, left, top },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
