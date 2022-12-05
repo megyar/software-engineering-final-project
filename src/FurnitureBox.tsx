@@ -12,7 +12,7 @@ const style: CSSProperties = {
   cursor: 'move',
 }
 
-export interface BoxProps {
+export interface FurnitureBoxProps {
   id: any
   left: number
   top: number
@@ -21,7 +21,7 @@ export interface BoxProps {
   children?: ReactNode
 }
 
-export const Box: FC<BoxProps> = ({
+export const FurnitureBox: FC<FurnitureBoxProps> = ({
   id,
   left,
   top,
@@ -31,7 +31,7 @@ export const Box: FC<BoxProps> = ({
 }) => {
   const [{ isDragging }, drag] = useDrag(
     () => ({
-      type: ItemTypes.BOX,
+      type: ItemTypes.FurnitureBOX,
       item: { id, left, top },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
@@ -45,10 +45,10 @@ export const Box: FC<BoxProps> = ({
   }
   return (
     <div
-      className="box"
+      className="furniturebox"
       ref={drag}
       style={{ ...style, left, top }}
-      data-testid="box"
+      data-testid="furniturebox"
     >
       {children}
       

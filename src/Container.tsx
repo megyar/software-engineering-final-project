@@ -35,8 +35,8 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
       title: string
     }
   }>({
-    a: { top: 20, left: 80, pic: chair1.picture, title: 'chair 1' },
-    //b: { top: 180, left: 20, title: 'Drag me too' },
+    a: { top: 20, left: 80, pic: chair1.picture, title: '' },
+    b: { top: 180, left: 20, title: 'Drag me too' },
   })
 
   const moveBox = useCallback(
@@ -69,7 +69,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
   return (
     <div ref={drop} style={styles}>
       {Object.keys(boxes).map((key) => {
-        const { left, top, title } = boxes[key] as {
+        const { left, top, title, pic } = boxes[key] as {
           top: number
           left: number
           title: string
@@ -81,7 +81,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
             id={key}
             left={left}
             top={top}
-            pic={key}
+            pic={pic}
             //hideSourceOnDrag={hideSourceOnDrag}
           >
             {title}

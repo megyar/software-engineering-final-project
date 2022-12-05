@@ -19,7 +19,7 @@ export const chair1 = {
     pattern: "Solid",
     color: ["white"],
     isComfy: false,
-    picture: "src/Furniture/chair 1.jpg" //chair1.picture the picture will show up
+    picture: "./Furniture/chair1.jpg" //chair1.picture the picture will show up
 };
 //export default chair1;
 
@@ -29,7 +29,7 @@ const chair2 = {
     pattern: "Stripes",
     color: ["brown", "black", "white"],
     isComfy: true,
-    picture: "src/Furniture/chair 2.jpg"
+    picture: "src/Furniture/chair2.jpg"
 };
 
 const chair3 = {
