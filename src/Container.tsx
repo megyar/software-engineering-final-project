@@ -8,6 +8,7 @@ import { Box } from './Box'
 import type { DragItem } from './interfaces'
 import { ItemTypes } from './ItemTypes'
 
+
 //import { chair1 } from './Components/furniture'
 //import { types } from '@babel/core'
 

@@ -6,6 +6,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { Container } from './Container'
 import { Menu } from './Menu'
 import  DropDown  from './Dropdown'
+import './Example.css'
 
 
 export const Example: FC = () => {
