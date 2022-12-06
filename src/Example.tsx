@@ -37,6 +37,7 @@ export const Example: FC = () => {
 
   return (
     <>
+        <h1> Design Your Room!</h1>
       {selectFurniture
       ? 'You are currently looking at '+ selectFurniture 
       : "Select furniture type"}
@@ -59,8 +60,9 @@ export const Example: FC = () => {
         )}
       </button>
       <div>
+  
       <DndProvider backend={HTML5Backend}>
-        <h1> Design Your Room!</h1>
+        
         <Container hideSourceOnDrag={hideSourceOnDrag} />
         <Menu hideSourceOnDrag={hideSourceOnDrag} />
       </DndProvider>
