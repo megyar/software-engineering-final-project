@@ -63,7 +63,7 @@ const [continerList, setContainerList] = useState<Furniture>();
 
   const [, drop] = useDrop(
     () => ({
-      accept: ItemTypes.FBOX, 
+      accept: ItemTypes.BOX && ItemTypes.FBOX,
       drop(item: DragItem, monitor) {
         const current: Furniture = monitor.getItem(); 
         if (monitor.getItemType() !== 'fbox') {
@@ -79,8 +79,8 @@ const [continerList, setContainerList] = useState<Furniture>();
               update(boxes, {
                 $merge: {
                   [current.type]: {
-                    top: 0,
-                    left: 0,
+                    top: current.top,
+                    left: current.left,
                     type: 'box'
                   }
                 }
@@ -95,7 +95,7 @@ const [continerList, setContainerList] = useState<Furniture>();
   return (
     <div ref={drop} style={styles}>
       {Object.keys(boxes).map((key) => {
-        const { left, top, title, pic } = boxes[key] as {
+        const { left, top, pic } = boxes[key] as {
           top: number
           left: number
           title: string
@@ -110,7 +110,6 @@ const [continerList, setContainerList] = useState<Furniture>();
             pic={pic}
             //hideSourceOnDrag={hideSourceOnDrag}
           >
-            {title}
           </Box>
         )
       })}

@@ -5,6 +5,8 @@ export {};
 const furniture = ["Chairs", "Couches", "Tables", "Beds", "Dressers"];
 
 export interface Furniture {
+    top: number;
+    left: number;
     type: string;
     size: string;
     pattern: string;
@@ -51,7 +53,7 @@ const chair4 = {
     picture: "./Furniture/chair4.jpg"
 };
 
-const chair5 : Furniture = {
+const chair5  = {
     type: "Bedroom",
     size: "Medium",
     pattern: "Stripes",
