@@ -37,6 +37,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
       left: number
       pic: string
       title: string
+      type: string
     }
   }>({
     //a: { top: 20, left: 80, pic: chair1.picture, title: '' },
@@ -48,7 +49,8 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
       setBoxes(
         update(boxes, {
           [id]: {
-            $merge: { left, top },
+            $merge: { 
+              left: left, top: top, },
           },
         }),
       )
@@ -63,24 +65,28 @@ const [continerList, setContainerList] = useState<Furniture>();
     () => ({
       accept: ItemTypes.FBOX, 
       drop(item: DragItem, monitor) {
+        const current: Furniture = monitor.getItem(); 
         if (monitor.getItemType() !== 'fbox') {
-        const delta = monitor.getDifferenceFromInitialOffset() as XYCoord
-        const left = Math.round(item.left + delta.x)
-        const top = Math.round(item.top + delta.y)
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const current: Furniture = monitor.getItem();  ////////////////////////////////////////////////////
-        moveBox(item.id, left, top)
-        return undefined
+          const delta = monitor.getDifferenceFromInitialOffset() as XYCoord
+          const left = Math.round(item.left + delta.x)
+          const top = Math.round(item.top + delta.y)
+           ////////////////////////////////////////////////////
+          moveBox(item.id, left, top)
+          return undefined
          }
         else {
-         //   setBoxes(
-          //    update(boxes, {
-           //     $merge: {
-          //        
-          //      })
-          //  )
-         //   change type
-         // return ;
+            setBoxes(
+              update(boxes, {
+                $merge: {
+                  [current.type]: {
+                    top: 0,
+                    left: 0,
+                    type: 'box'
+                  }
+                }
+              })
+            );
+          return ;
       }
 }}),
     [moveBox],

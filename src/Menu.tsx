@@ -23,32 +23,33 @@ export interface MenuState {
 }
 
 export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
-  const [boxes, setBoxes] = useState<{
+  const [menuboxes, setmenuBoxes] = useState<{
     [key: string]: {
       top: number
       left: number
       pic: string
       title: string
+      type: string
     }
   }>({
-    bed1: { top: 10, left: 110, pic: "./Furniture/bed1.jpg", title: 'bed1' },
-    bed2: { top: 5, left: 200, pic: "./Furniture/bed2.jpg", title: 'bed2' },
-    bed3: { top: 5, left: 300, pic: "./Furniture/bed3.jpg", title: 'bed3' },
-    bed4: { top: 5, left: 400, pic:  "./Furniture/bed4.jpg", title: 'bed4'},
+    bed1: { top: 10, left: 110, pic: "./Furniture/bed1.jpg", title: 'bed1', type: 'fbox' },
+    bed2: { top: 5, left: 200, pic: "./Furniture/bed2.jpg", title: 'bed2', type: 'fbox' },
+    bed3: { top: 5, left: 300, pic: "./Furniture/bed3.jpg", title: 'bed3', type: 'fbox' },
+    bed4: { top: 5, left: 400, pic:  "./Furniture/bed4.jpg", title: 'bed4', type: 'fbox'},
   })
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const moveBox = useCallback(
     (id: string, left: number, top: number) => {
-      setBoxes(
-        update(boxes, {
+      setmenuBoxes(
+        update(menuboxes, {
           [id]: {
-            $merge: { left, top },
+            $merge: { left, top, },
           },
         }),
       )
     },
-    [boxes, setBoxes],
+    [menuboxes, setmenuBoxes],
   )
 
   // const [, drop] = useDrop(
@@ -67,8 +68,8 @@ export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
 
   return (
     <div style={styles}>
-      {Object.keys(boxes).map((key) => {
-        const { left, top, pic } = boxes[key] as {
+      {Object.keys(menuboxes).map((key) => {
+        const { left, top, pic } = menuboxes[key] as {
           top: number
           left: number
           title: string
