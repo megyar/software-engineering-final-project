@@ -6,7 +6,6 @@ import { ItemTypes } from './ItemTypes'
 
 const style: CSSProperties = {
   position: 'absolute',
-  border: '1px dashed gray',
   backgroundColor: 'white',
   padding: '0.5rem 1rem',
   cursor: 'move',
@@ -21,7 +20,7 @@ export interface FurnitureBoxProps {
   children?: ReactNode
 }
 
-export const FurnitureBox: FC<FurnitureBoxProps> = ({
+export const FBox: FC<FurnitureBoxProps> = ({
   id,
   left,
   top,
@@ -31,7 +30,7 @@ export const FurnitureBox: FC<FurnitureBoxProps> = ({
 }) => {
   const [{ isDragging }, drag] = useDrag(
     () => ({
-      type: ItemTypes.FURNITUREBOX,
+      type: ItemTypes.FBOX,
       item: { id, left, top },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),

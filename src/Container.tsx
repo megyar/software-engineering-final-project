@@ -35,7 +35,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
       title: string
     }
   }>({
-    a: { top: 20, left: 80, pic: chair1.picture, title: '' },
+    //a: { top: 20, left: 80, pic: chair1.picture, title: '' },
    // b: { top: 180, left: 20, title: 'Drag me too' },
   })
 
@@ -54,16 +54,20 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
 
   const [, drop] = useDrop(
     () => ({
-      accept: ItemTypes.BOX,
+      accept: ItemTypes.FBOX, 
       drop(item: DragItem, monitor) {
-        monitor.getItemType()
+         if (monitor.getItemType() === 'box') {
         const delta = monitor.getDifferenceFromInitialOffset() as XYCoord
         const left = Math.round(item.left + delta.x)
         const top = Math.round(item.top + delta.y)
         moveBox(item.id, left, top)
         return undefined
-      },
-    }),
+         }
+        else {
+
+          return ;
+      }
+}}),
     [moveBox],
   )
 

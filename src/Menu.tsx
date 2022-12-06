@@ -20,7 +20,7 @@ export interface MenuProps {
 }
 
 export interface MenuState {
-  boxes: { [key: string]: { top: number; left: number; title: string } }
+  boxes: { [key: string]: { top: number; left: number; pic: string, title: string } }
 }
 
 export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
@@ -28,11 +28,14 @@ export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
     [key: string]: {
       top: number
       left: number
+      pic: string
       title: string
     }
   }>({
-    a: { top: 10, left: 10, title: 'picture menu ' },
-    b: { top: 50, left: 10, title: 'bed for ex' },
+    bed1: { top: 10, left: 110, pic: "./Furniture/bed1.jpg", title: 'bed1' },
+    bed2: { top: 5, left: 200, pic: "./Furniture/bed2.jpg", title: 'bed2' },
+    bed3: { top: 5, left: 300, pic: "./Furniture/bed3.jpg", title: 'bed3' },
+    bed4: { top: 5, left: 400, pic:  "./Furniture/bed4.jpg", title: 'bed4'},
   })
 
   const moveBox = useCallback(
@@ -65,10 +68,11 @@ export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
   return (
     <div style={styles}>
       {Object.keys(boxes).map((key) => {
-        const { left, top, title } = boxes[key] as {
+        const { left, top, pic } = boxes[key] as {
           top: number
           left: number
           title: string
+          pic: string
         }
         return (
           <Box
@@ -76,10 +80,10 @@ export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
             id={key}
             left={left}
             top={top}
-            pic={key}
+            pic={pic}
             //hideSourceOnDrag={hideSourceOnDrag}
           >
-            {title}
+            
           </Box>
         )
       })}
