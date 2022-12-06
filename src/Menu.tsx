@@ -1,12 +1,12 @@
 import update from 'immutability-helper'
 import type { CSSProperties, FC } from 'react'
 import { useCallback, useState } from 'react'
-import type { XYCoord } from 'react-dnd'
-import { useDrop } from 'react-dnd'
+//import type { XYCoord } from 'react-dnd'
+//import { useDrop } from 'react-dnd'
 
 import { Box } from './Box'
-import type { DragItem } from './interfaces'
-import { ItemTypes } from './ItemTypes'
+//import type { DragItem } from './interfaces'
+//import { ItemTypes } from './ItemTypes'
 
 const styles: CSSProperties = {
   width: 1000,
@@ -38,6 +38,7 @@ export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
     bed4: { top: 5, left: 400, pic:  "./Furniture/bed4.jpg", title: 'bed4'},
   })
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const moveBox = useCallback(
     (id: string, left: number, top: number) => {
       setBoxes(

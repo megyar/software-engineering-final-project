@@ -27,19 +27,14 @@ export const Example: FC = () => {
   };
 
   const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const toggle = useCallback(
     () => setHideSourceOnDrag(!hideSourceOnDrag),
     [hideSourceOnDrag],
   )
 
   return (
-    <><div>
-      <DndProvider backend={HTML5Backend}>
-        <h1> Design Your Room!</h1>
-        <Container hideSourceOnDrag={hideSourceOnDrag} />
-        <Menu hideSourceOnDrag={hideSourceOnDrag} />
-      </DndProvider>
-    </div>
+    <>
       {selectFurniture
       ? 'You are currently looking at'+ {selectFurniture}
       : "Select furniture type"}
@@ -61,7 +56,13 @@ export const Example: FC = () => {
           />
         )}
       </button>
-
+      <div>
+      <DndProvider backend={HTML5Backend}>
+        <h1> Design Your Room!</h1>
+        <Container hideSourceOnDrag={hideSourceOnDrag} />
+        <Menu hideSourceOnDrag={hideSourceOnDrag} />
+      </DndProvider>
+    </div>
       </div></>
   )
 }

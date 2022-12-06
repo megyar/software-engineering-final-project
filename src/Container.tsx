@@ -8,7 +8,7 @@ import { Box } from './Box'
 import type { DragItem } from './interfaces'
 import { ItemTypes } from './ItemTypes'
 
-import { chair1 } from './Components/furniture'
+//import { chair1 } from './Components/furniture'
 //import { types } from '@babel/core'
 
 const styles: CSSProperties = {
@@ -56,7 +56,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
     () => ({
       accept: ItemTypes.FBOX, 
       drop(item: DragItem, monitor) {
-         if (monitor.getItemType() === 'box') {
+         if (monitor.getItemType() === 'fbox') {
         const delta = monitor.getDifferenceFromInitialOffset() as XYCoord
         const left = Math.round(item.left + delta.x)
         const top = Math.round(item.top + delta.y)
