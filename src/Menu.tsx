@@ -4,7 +4,7 @@ import { useCallback, useState } from 'react'
 //import type { XYCoord } from 'react-dnd'
 //import { useDrop } from 'react-dnd'
 
-import { Box } from './Box'
+import { FBox } from './BoxFurniture'
 //import type { DragItem } from './interfaces'
 //import { ItemTypes } from './ItemTypes'
 
@@ -76,7 +76,7 @@ export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
           pic: string
         }
         return (
-          <Box
+          <FBox
             key={key}
             id={key}
             left={left}
@@ -85,7 +85,7 @@ export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
             //hideSourceOnDrag={hideSourceOnDrag}
           >
             
-          </Box>
+          </FBox>
         )
       })}
     </div>

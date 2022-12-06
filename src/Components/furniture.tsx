@@ -13,11 +13,6 @@ export interface Furniture {
     picture: string;
 }
 
-export interface BoxMove {
-    top: number;
-    left: number;
-    furnitureItem: Furniture;
-}
 
 export const chair1 = {
     type: "Dining Room",
@@ -56,7 +51,7 @@ const chair4 = {
     picture: "./Furniture/chair4.jpg"
 };
 
-const chair5 = {
+const chair5 : Furniture = {
     type: "Bedroom",
     size: "Medium",
     pattern: "Stripes",

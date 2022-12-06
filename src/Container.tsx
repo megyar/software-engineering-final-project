@@ -88,7 +88,7 @@ const [continerList, setContainerList] = useState<Furniture>();
             );
           return ;
       }
-}}),
+  }}),
     [moveBox],
   )
 
