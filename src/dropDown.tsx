@@ -13,8 +13,9 @@ const DropDown: React.FC<DropDownProps> = ({
 }: DropDownProps): JSX.Element => {
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
 
-const onClickHandler = (city: string): void => {
-    furnitureSelection(city);
+const onClickHandler = (furniture: string): void => {
+    furnitureSelection(furniture);
+    console.log(furniture);
   };
 
   useEffect(() => {
