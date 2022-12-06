@@ -25,6 +25,7 @@ export const Example: FC = () => {
   };
   const furnitureSelection = (furniture: string): void => {
     setSelectFurniture(furniture);
+    console.log(furniture);
   };
 
   const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
@@ -37,7 +38,7 @@ export const Example: FC = () => {
   return (
     <>
       {selectFurniture
-      ? 'You are currently looking at'+ {selectFurniture}
+      ? 'You are currently looking at '+ selectFurniture 
       : "Select furniture type"}
     <div>
       <button

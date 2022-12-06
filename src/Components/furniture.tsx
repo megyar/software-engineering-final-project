@@ -4,7 +4,7 @@ import { isCommaListExpression } from "typescript";
 export {};
 const furniture = ["Chairs", "Couches", "Tables", "Beds", "Dressers"];
 
-interface Chair {
+export interface Furniture {
     type: string;
     size: string;
     pattern: string;
@@ -12,6 +12,7 @@ interface Chair {
     isComfy: boolean;
     picture: string;
 }
+
 
 export const chair1 = {
     type: "Dining Room",
@@ -50,7 +51,7 @@ const chair4 = {
     picture: "./Furniture/chair4.jpg"
 };
 
-const chair5 = {
+const chair5 : Furniture = {
     type: "Bedroom",
     size: "Medium",
     pattern: "Stripes",
