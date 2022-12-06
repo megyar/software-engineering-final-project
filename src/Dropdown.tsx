@@ -13,13 +13,7 @@ const DropDown: React.FC<DropDownProps> = ({
 }: DropDownProps): JSX.Element => {
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
 
-  /**
-   * Handle passing the city name
-   * back to the parent component
-   *
-   * @param city  The selected city
-   */
-  const onClickHandler = (city: string): void => {
+const onClickHandler = (city: string): void => {
     furnitureSelection(city);
   };
 
