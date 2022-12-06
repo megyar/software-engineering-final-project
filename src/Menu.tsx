@@ -11,7 +11,6 @@ import { Box } from './Box'
 const styles: CSSProperties = {
   width: 1000,
   height: 100,
-  border: '1px solid black',
   position: 'relative',
 }
 

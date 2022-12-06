@@ -4,13 +4,19 @@ import { isCommaListExpression } from "typescript";
 export {};
 const furniture = ["Chairs", "Couches", "Tables", "Beds", "Dressers"];
 
-interface Chair {
+export interface Furniture {
     type: string;
     size: string;
     pattern: string;
     color: string[];
     isComfy: boolean;
     picture: string;
+}
+
+export interface BoxMove {
+    top: number;
+    left: number;
+    furnitureItem: Furniture;
 }
 
 export const chair1 = {
