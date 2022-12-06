@@ -8,25 +8,22 @@ import { Box } from './Box'
 import type { DragItem } from './interfaces'
 import { ItemTypes } from './ItemTypes'
 
-import { chair1 } from './Components/furniture'
-//import { types } from '@babel/core'
-
 const styles: CSSProperties = {
   width: 1000,
-  height: 600,
+  height: 100,
   border: '1px solid black',
   position: 'relative',
 }
 
-export interface ContainerProps {
+export interface MenuProps {
   hideSourceOnDrag: boolean
 }
 
-export interface ContainerState {
+export interface MenuState {
   boxes: { [key: string]: { top: number; left: number; pic: string, title: string } }
 }
 
-export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
+export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
   const [boxes, setBoxes] = useState<{
     [key: string]: {
       top: number
@@ -35,8 +32,10 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
       title: string
     }
   }>({
-    //a: { top: 20, left: 80, pic: chair1.picture, title: '' },
-   // b: { top: 180, left: 20, title: 'Drag me too' },
+    bed1: { top: 10, left: 110, pic: "./Furniture/bed1.jpg", title: 'bed1' },
+    bed2: { top: 5, left: 200, pic: "./Furniture/bed2.jpg", title: 'bed2' },
+    bed3: { top: 5, left: 300, pic: "./Furniture/bed3.jpg", title: 'bed3' },
+    bed4: { top: 5, left: 400, pic:  "./Furniture/bed4.jpg", title: 'bed4'},
   })
 
   const moveBox = useCallback(
@@ -52,29 +51,24 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
     [boxes, setBoxes],
   )
 
-  const [, drop] = useDrop(
-    () => ({
-      accept: ItemTypes.FBOX, 
-      drop(item: DragItem, monitor) {
-         if (monitor.getItemType() === 'box') {
-        const delta = monitor.getDifferenceFromInitialOffset() as XYCoord
-        const left = Math.round(item.left + delta.x)
-        const top = Math.round(item.top + delta.y)
-        moveBox(item.id, left, top)
-        return undefined
-         }
-        else {
-
-          return ;
-      }
-}}),
-    [moveBox],
-  )
+  // const [, drop] = useDrop(
+  //   () => ({
+  //     accept: ItemTypes.BOX,
+  //     drop(item: DragItem, monitor) {
+  //       const delta = monitor.getDifferenceFromInitialOffset() as XYCoord
+  //       const left = Math.round(item.left + delta.x)
+  //       const top = Math.round(item.top + delta.y)
+  //       moveBox(item.id, left, top)
+  //       return undefined
+  //     },
+  //   }),
+  //   [moveBox],
+  // )
 
   return (
-    <div ref={drop} style={styles}>
+    <div style={styles}>
       {Object.keys(boxes).map((key) => {
-        const { left, top, title, pic } = boxes[key] as {
+        const { left, top, pic } = boxes[key] as {
           top: number
           left: number
           title: string
@@ -89,7 +83,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
             pic={pic}
             //hideSourceOnDrag={hideSourceOnDrag}
           >
-            {title}
+            
           </Box>
         )
       })}
