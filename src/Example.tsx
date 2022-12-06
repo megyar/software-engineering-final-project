@@ -25,6 +25,7 @@ export const Example: FC = () => {
   };
   const furnitureSelection = (furniture: string): void => {
     setSelectFurniture(furniture);
+    console.log(furniture);
   };
 
   const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
@@ -36,8 +37,9 @@ export const Example: FC = () => {
 
   return (
     <>
+        <h1> Design Your Room!</h1>
       {selectFurniture
-      ? 'You are currently looking at'+ {selectFurniture}
+      ? 'You are currently looking at '+ selectFurniture 
       : "Select furniture type"}
     <div>
       <button
@@ -58,8 +60,9 @@ export const Example: FC = () => {
         )}
       </button>
       <div>
+  
       <DndProvider backend={HTML5Backend}>
-        <h1> Design Your Room!</h1>
+        
         <Container hideSourceOnDrag={hideSourceOnDrag} />
         <Menu hideSourceOnDrag={hideSourceOnDrag} />
       </DndProvider>
