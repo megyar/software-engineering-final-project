@@ -3,7 +3,7 @@ import { useDrag } from 'react-dnd'
 import { ImageViewer } from './ImageViewrer'
 
 import { ItemTypes } from './ItemTypes'
-import { Furniture } from './Components/furniture'
+//import { Furniture } from './Components/furniture'
 
 const style: CSSProperties = {
   position: 'absolute',

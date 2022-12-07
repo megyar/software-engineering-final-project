@@ -8,9 +8,9 @@ import { useDrop } from 'react-dnd'
 
 import { Box } from './Box'
 import type { DragItem } from './interfaces'
-import { FBOX, ItemTypes } from './ItemTypes'
+import { ItemTypes } from './ItemTypes'
 import { Furniture } from './Components/furniture'
-import { FurnitureBoxProps } from './BoxFurniture'
+//import { FurnitureBoxProps } from './BoxFurniture'
 
 
 //import { chair1 } from './Components/furniture'
