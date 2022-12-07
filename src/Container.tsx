@@ -69,18 +69,18 @@ const [continerList, setContainerList] = useState<Furniture>();
       accept: [ItemTypes.BOX, ItemTypes.FBOX],
       drop(item: DragItem, monitor) {
         const current: Furniture = monitor.getItem();
-        console.log(monitor.getItemType())
+        //console.log(monitor.getItemType())
         if (monitor.getItemType() !== 'fbox') {
           const delta = monitor.getDifferenceFromInitialOffset() as XYCoord
           const left = Math.round(item.left + delta.x)
           const top = Math.round(item.top + delta.y)
            ////////////////////////////////////////////////////
-           console.log("actually trying to move")
+           //console.log("actually trying to move")
           moveBox(item.id, left, top)
           return undefined
          }
         else {
-          console.log(monitor.getItemType())
+          //console.log(monitor.getItemType())
             setBoxes(
               update(boxes, {
                 $merge: {
