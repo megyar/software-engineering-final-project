@@ -3,7 +3,7 @@ import { useDrag } from 'react-dnd'
 import { ImageViewer } from './ImageViewrer'
 
 import { ItemTypes } from './ItemTypes'
-import { Furniture } from './Components/furniture'
+//import { Furniture } from './Components/furniture'
 
 const style: CSSProperties = {
   position: 'absolute',
@@ -16,7 +16,7 @@ export interface BoxProps {
   id: any
   left: number
   top: number
-  pic: string;
+  picture: string;
   hideSourceOnDrag?: boolean
   children?: ReactNode
 }
@@ -25,14 +25,14 @@ export const Box: FC<BoxProps> = ({
   id,
   left,
   top,
-  pic,
+  picture,
   hideSourceOnDrag,
   children,
 }) => {
   const [{ isDragging }, drag] = useDrag(
     () => ({
       type: ItemTypes.BOX,
-      item: { id, left, top },
+      item: { id, left, top, picture },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
       }),
@@ -52,7 +52,7 @@ export const Box: FC<BoxProps> = ({
     >
       {children}
       
-      <ImageViewer imageName={pic}></ImageViewer>
+      <ImageViewer imageName={picture}></ImageViewer>
       {isDragging && 'GET FURNITURE PROPERTIES TO SHOW'}
     </div>
   )

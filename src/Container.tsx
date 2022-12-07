@@ -10,6 +10,7 @@ import { Box } from './Box'
 import type { DragItem } from './interfaces'
 import { ItemTypes } from './ItemTypes'
 import { Furniture } from './Components/furniture'
+//import { FurnitureBoxProps } from './BoxFurniture'
 
 
 //import { chair1 } from './Components/furniture'
@@ -28,7 +29,7 @@ export interface ContainerProps {
 }
 
 export interface ContainerState {
-  boxes: { [key: string]: { top: number; left: number; pic: string, title: string } }
+  boxes: { [key: string]: { top: number; left: number; picture: string, title: string } }
 }
 
 export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
@@ -36,7 +37,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag }) => {
     [key: string]: {
       top: number
       left: number
-      pic: string
+      picture: string
       title: string
       type: string
     }
@@ -85,10 +86,10 @@ const [continerList, setContainerList] = useState<Furniture>();
               update(boxes, {
                 $merge: {
                   [len]: {
-                    top: current.top,
-                    left: current.left,
+                    top: 0,
+                    left: 0,
                     type: 'box',
-                    pic: current.picture
+                    picture: current.picture
                   }
                 }
               })
@@ -103,11 +104,11 @@ const [continerList, setContainerList] = useState<Furniture>();
   return (
     <div ref={drop} style={styles}>
       {Object.keys(boxes).map((key) => {
-        const { left, top, pic } = boxes[key] as {
+        const { left, top, picture } = boxes[key] as {
           top: number
           left: number
           title: string
-          pic: string
+          picture: string
         }
         return (
           <Box
@@ -115,7 +116,7 @@ const [continerList, setContainerList] = useState<Furniture>();
             id={key}
             left={left}
             top={top}
-            pic={pic}
+            picture={picture}
             //hideSourceOnDrag={hideSourceOnDrag}
           >
           </Box>

@@ -3,5 +3,5 @@ export interface DragItem {
   id: string
   top: number
   left: number
-  img: string
+  picture: string
 }
