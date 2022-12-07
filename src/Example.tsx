@@ -5,7 +5,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 
 import { Container } from './Container'
 import { Menu } from './Menu'
-import  DropDown  from './Dropdown'
+import Dropdown from './Dropdown'
 import './Example.css'
 
 
@@ -95,7 +95,7 @@ export const Example: FC = () => {
       >
          <div>{selectFurniture ? "Select: " + selectFurniture : "Select ..."} </div>
         {showDropDown && (
-          <DropDown
+          <Dropdown
             furniture={furniture()}
             showDropDown={false}
             toggleDropDown={(): void => toggleDropDown()}

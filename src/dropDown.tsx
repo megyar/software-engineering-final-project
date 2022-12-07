@@ -7,7 +7,7 @@ type DropDownProps = {
   furnitureSelection: Function;
 };
 
-const DropDown: React.FC<DropDownProps> = ({
+const Dropdown: React.FC<DropDownProps> = ({
   furniture,
   furnitureSelection,
 }: DropDownProps): JSX.Element => {
@@ -44,4 +44,4 @@ const onClickHandler = (furniture: string): void => {
   );
 };
 
-export default DropDown;
+export default Dropdown;
