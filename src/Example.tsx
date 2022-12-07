@@ -5,7 +5,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 
 import { Container } from './Container'
 import { Menu } from './Menu'
-import Dropdown from './Dropdown'
+import Dropdown from './DropDownMenu'
 import './Example.css'
 
 

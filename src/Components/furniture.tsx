@@ -2,7 +2,7 @@
 import { isCommaListExpression } from "typescript";
 
 export {};
-const furniture = ["Chairs", "Couches", "Tables", "Beds", "Dressers"];
+const furniture = ["Chairs", "Couches", "Tables", "Beds", "Dressers", "Presets"];
 
 export interface Furniture {
     top: number;
