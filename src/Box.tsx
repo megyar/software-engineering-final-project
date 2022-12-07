@@ -52,7 +52,7 @@ export const Box: FC<BoxProps> = ({
       {children}
       
       <ImageViewer imageName={pic}></ImageViewer>
-      {isDragging && 'GET PROPERTIES OF FURNITURE TO SHOW'}
+      {isDragging && 'GET PROPERTIES OF FURNITURE TO SHOW3'}
     </div>
   )
 }
