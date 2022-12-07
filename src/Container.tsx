@@ -69,7 +69,7 @@ const [continerList, setContainerList] = useState<Furniture>();
     () => ({
       accept: [ItemTypes.BOX, ItemTypes.FBOX],
       drop(item: DragItem, monitor) {
-        const current: FurnitureBoxProps = monitor.getItem();
+        const current: Furniture = monitor.getItem();
         //console.log(monitor.getItemType())
         if (monitor.getItemType() !== 'fbox') {
           const delta = monitor.getDifferenceFromInitialOffset() as XYCoord
@@ -89,7 +89,7 @@ const [continerList, setContainerList] = useState<Furniture>();
                     top: 0,
                     left: 0,
                     type: 'box',
-                    pic: current.picture
+                    picture: current.picture
                   }
                 }
               })

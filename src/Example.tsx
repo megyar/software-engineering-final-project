@@ -28,6 +28,21 @@ export const Example: FC = () => {
     console.log(furniture);
   };
 
+  const [menuboxes, setmenuBoxes] = useState<{
+    [key: string]: {
+      top: number
+      left: number
+      picture: string
+      title: string
+      type: string
+    }
+  }>({
+    bed1: { top: 10, left: 110, picture: "./Furniture/bed1.jpg", title: 'bed1', type: 'fbox' },
+    bed2: { top: 5, left: 200, picture: "./Furniture/bed2.jpg", title: 'bed2', type: 'fbox' },
+    bed3: { top: 5, left: 300, picture: "./Furniture/bed3.jpg", title: 'bed3', type: 'fbox' },
+    bed4: { top: 5, left: 400, picture:  "./Furniture/bed4.jpg", title: 'bed4', type: 'fbox'},
+  })
+
   const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const toggle = useCallback(
@@ -64,7 +79,7 @@ export const Example: FC = () => {
       <DndProvider backend={HTML5Backend}>
         
         <Container hideSourceOnDrag={hideSourceOnDrag} />
-        <Menu hideSourceOnDrag={hideSourceOnDrag} />
+        <Menu hideSourceOnDrag={hideSourceOnDrag} menuboxes={menuboxes} setmenuBoxes={setmenuBoxes}/>
       </DndProvider>
     </div>
       </div></>
