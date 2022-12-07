@@ -15,7 +15,7 @@ export interface FurnitureBoxProps {
   id: any
   left: number
   top: number
-  pic: string;
+  picture: string;
   hideSourceOnDrag?: boolean
   children?: ReactNode
 }
@@ -24,7 +24,7 @@ export const FBox: FC<FurnitureBoxProps> = ({
   id,
   left,
   top,
-  pic,
+  picture,
   hideSourceOnDrag,
   children,
 }) => {
@@ -32,12 +32,12 @@ export const FBox: FC<FurnitureBoxProps> = ({
     () => ({
       type: ItemTypes.FBOX,
       item: { 
-        id, left, top, pic },
+        id, left, top, picture },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
       }),
     }),
-    [id, left, top, pic],
+    [id, left, top, picture],
   )
 
   if (isDragging && hideSourceOnDrag) {
@@ -52,7 +52,7 @@ export const FBox: FC<FurnitureBoxProps> = ({
     >
       {children}
       
-      <ImageViewer imageName={pic}></ImageViewer>
+      <ImageViewer imageName={picture}></ImageViewer>
       {isDragging && 'GET PROPERTIES OF FURNITURE TO SHOW'}
     </div>
   )

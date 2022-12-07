@@ -19,7 +19,7 @@ export interface MenuProps {
 }
 
 export interface MenuState {
-  boxes: { [key: string]: { top: number; left: number; pic: string, title: string } }
+  boxes: { [key: string]: { top: number; left: number; picture: string, title: string } }
 }
 
 export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
@@ -27,15 +27,15 @@ export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
     [key: string]: {
       top: number
       left: number
-      pic: string
+      picture: string
       title: string
       type: string
     }
   }>({
-    bed1: { top: 10, left: 110, pic: "./Furniture/bed1.jpg", title: 'bed1', type: 'fbox' },
-    bed2: { top: 5, left: 200, pic: "./Furniture/bed2.jpg", title: 'bed2', type: 'fbox' },
-    bed3: { top: 5, left: 300, pic: "./Furniture/bed3.jpg", title: 'bed3', type: 'fbox' },
-    bed4: { top: 5, left: 400, pic:  "./Furniture/bed4.jpg", title: 'bed4', type: 'fbox'},
+    bed1: { top: 10, left: 110, picture: "./Furniture/bed1.jpg", title: 'bed1', type: 'fbox' },
+    bed2: { top: 5, left: 200, picture: "./Furniture/bed2.jpg", title: 'bed2', type: 'fbox' },
+    bed3: { top: 5, left: 300, picture: "./Furniture/bed3.jpg", title: 'bed3', type: 'fbox' },
+    bed4: { top: 5, left: 400, picture:  "./Furniture/bed4.jpg", title: 'bed4', type: 'fbox'},
   })
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -69,11 +69,11 @@ export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
   return (
     <div style={styles}>
       {Object.keys(menuboxes).map((key) => {
-        const { left, top, pic } = menuboxes[key] as {
+        const { left, top, picture } = menuboxes[key] as {
           top: number
           left: number
           title: string
-          pic: string
+          picture: string
         }
         return (
           <FBox
@@ -81,7 +81,7 @@ export const  Menu: FC<MenuProps> = ({ hideSourceOnDrag }) => {
             id={key}
             left={left}
             top={top}
-            pic={pic}
+            picture={picture}
             //hideSourceOnDrag={hideSourceOnDrag}
           >
             
