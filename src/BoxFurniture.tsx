@@ -32,12 +32,12 @@ export const FBox: FC<FurnitureBoxProps> = ({
     () => ({
       type: ItemTypes.FBOX,
       item: { 
-        id, left, top },
+        id, left, top, pic },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
       }),
     }),
-    [id, left, top],
+    [id, left, top, pic],
   )
 
   if (isDragging && hideSourceOnDrag) {

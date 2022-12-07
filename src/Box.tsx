@@ -3,6 +3,7 @@ import { useDrag } from 'react-dnd'
 import { ImageViewer } from './ImageViewrer'
 
 import { ItemTypes } from './ItemTypes'
+import { Furniture } from './Components/furniture'
 
 const style: CSSProperties = {
   position: 'absolute',
@@ -52,7 +53,7 @@ export const Box: FC<BoxProps> = ({
       {children}
       
       <ImageViewer imageName={pic}></ImageViewer>
-      {isDragging && 'GET PROPERTIES OF FURNITURE TO SHOW'}
+      {isDragging && 'GET FURNITURE PROPERTIES TO SHOW'}
     </div>
   )
 }
