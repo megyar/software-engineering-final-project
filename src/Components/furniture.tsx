@@ -26,7 +26,7 @@ export const chair1 = {
 };
 //export default chair1;
 
-const chair2 = {
+export const chair2 = {
     type: "Living Room",
     size: "Medium",
     pattern: "Stripes",
@@ -35,7 +35,7 @@ const chair2 = {
     picture: "./Furniture/chair2.jpg"
 };
 
-const chair3 = {
+export const chair3 = {
     type: "Living Room",
     size: "Small",
     pattern: "Zig-Zag",
@@ -44,7 +44,7 @@ const chair3 = {
     picture: "./Furniture/chair3.jpg"
 };
 
-const chair4 = {
+export const chair4 = {
     type: "Living Room",
     size: "Medium",
     pattern: "Solid",
@@ -53,7 +53,7 @@ const chair4 = {
     picture: "./Furniture/chair4.jpg"
 };
 
-const chair5  = {
+export const chair5  = {
     type: "Bedroom",
     size: "Medium",
     pattern: "Stripes",
@@ -62,7 +62,7 @@ const chair5  = {
     picture: "./Furniture/chair5.jpg"
 };
 
-const chair6 = {
+export const chair6 = {
     type: "Bedroom",
     size: "Large",
     pattern: "Zig-Zag",
@@ -71,7 +71,7 @@ const chair6 = {
     picture: "./Furniture/chair6.jpg"
 };
 
-const couch1 = {
+export const couch1 = {
     type: "Living Room",
     size: "small",
     pattern: "Solid",
@@ -79,7 +79,7 @@ const couch1 = {
     isComfy: true,
     picture: "./Furniture/couch1.jpg"
 };
-const couch2 = {
+export const couch2 = {
     type: "Living Room",
     size: "large",
     pattern: "Stripes",
@@ -87,7 +87,7 @@ const couch2 = {
     isComfy: true,
     picture: "./Furniture/couch2.jpg"
 };
-const couch3 = {
+export const couch3 = {
     type: "Living Room",
     size: "medium",
     pattern: "Solid",
@@ -95,7 +95,7 @@ const couch3 = {
     isComfy: true,
     picture: "./Furniture/couch3.jpg"
 };
-const couch4 = {
+export const couch4 = {
     type: "Living Room",
     size: "large",
     pattern: "Zig-Zag",
@@ -103,7 +103,7 @@ const couch4 = {
     isComfy: true,
     picture: "./Furniture/couch4.jpg"
 };
-const couch5 = {
+export const couch5 = {
     type: "Bedroom",
     size: "small",
     pattern: "Solid",
@@ -111,7 +111,7 @@ const couch5 = {
     isComfy: true,
     picture: "./Furniture/couch5.jpg"
 };
-const couch6 = {
+export const couch6 = {
     type: "Living Room",
     size: "medium",
     pattern: "Stripes",
@@ -121,7 +121,7 @@ const couch6 = {
 };
 
 
-const bed1 = {
+export const bed1 = {
     type: "Kids Room",
     size: "Twin",
     pattern: "Solid",
@@ -129,7 +129,7 @@ const bed1 = {
     isComfy: true,
     picture: "./Furniture/bed1.jpg"
 };
-const bed2 = {
+export const bed2 = {
     type: "Kids Room",
     size: "Twin",
     pattern: "Stripes",
@@ -137,7 +137,7 @@ const bed2 = {
     isComfy: false,
     picture: "./Furniture/bed2.jpg"
 };
-const bed3 = {
+export const bed3 = {
     type: "Adult Room",
     size: "Double",
     pattern: "Solid",
@@ -145,11 +145,128 @@ const bed3 = {
     isComfy: true,
     picture: "./Furniture/bed3.jpg"
 };
-const bed4 = {
+export const bed4 = {
     type: "Adult Room",
     size: "Queen",
     pattern: "Solid",
     color: ["Brown"],
     isComfy: true,
     picture: "./Furniture/bed4.jpg"
+};
+export const preset1 = {
+    type: "Living Room",
+    size: "Large",
+    pattern: "Solid",
+    color: ["white", "brown"],
+    isComfy: true,
+    picture: "./Furniture/preset1.jpg" 
+};
+export const preset2 = {
+    type: "Dining Room",
+    size: "Small",
+    pattern: "Solid",
+    color: ["white"],
+    isComfy: false,
+    picture: "./Furniture/preset2.jpg" 
+};
+export const preset3 = {
+    type: "Dining Room",
+    size: "Large",
+    pattern: "Solid",
+    color: ["black", "grey"],
+    isComfy: false,
+    picture: "./Furniture/preset3.jpg" 
+};
+export const preset4 = {
+    type: "Dining Room",
+    size: "Mini",
+    pattern: "Stipes",
+    color: ["white", "grey"],
+    isComfy: false,
+    picture: "./Furniture/preset4.jpg" 
+};export const preset5 = {
+    type: "Dining Room",
+    size: "Small",
+    pattern: "Solid",
+    color: ["blue"],
+    isComfy: true,
+    picture: "./Furniture/preset5.jpg" 
+};export const preset6 = {
+    type: "Living Room",
+    size: "Large",
+    pattern: "Plaid",
+    color: ["white", "black"],
+    isComfy: true,
+    picture: "./Furniture/preset6.jpg" 
+};export const preset7 = {
+    type: "Office",
+    size: "Extra Large",
+    pattern: "Solid",
+    color: ["Wood"],
+    isComfy: false,
+    picture: "./Furniture/preset7.jpg" 
+};
+export const table1 = {
+    type: "Bedroom",
+    size: "Mini",
+    pattern: "Solid",
+    color: ["White"],
+    isComfy: false,
+    picture: "./Furniture/table1.jpg" 
+};
+export const table2 = {
+    type: "Office",
+    size: "Small",
+    pattern: "Solid",
+    color: ["Brown", "White"],
+    isComfy: false,
+    picture: "./Furniture/table2.jpg" 
+};
+export const table3 = {
+    type: "Dining Room",
+    size: "Large",
+    pattern: "Spackled",
+    color: ["Black", "White"],
+    isComfy: false,
+    picture: "./Furniture/table3.jpg" 
+};
+export const table4 = {
+    type: "Living Room",
+    size: "Medium",
+    pattern: "Bordered",
+    color: ["White", "Grey"],
+    isComfy: false,
+    picture: "./Furniture/table4.jpg" 
+};
+export const table5 = {
+    type: "Living Room",
+    size: "Large",
+    pattern: "Wood",
+    color: ["Oak"],
+    isComfy: false,
+    picture: "./Furniture/table5.jpg" 
+};
+export const toilet1 = {
+    type: "Bathroom",
+    size: "Small",
+    pattern: "Solid",
+    color: ["White"],
+    isComfy: true,
+    picture: "./Furniture/toilet1.jpg" 
+};
+export const toilet2 = {
+    type: "Bathroom",
+    size: "Small",
+    pattern: "Solid",
+    color: ["White"],
+    isComfy: true,
+    picture: "./Furniture/toilet2.jpg" 
+};
+export const piano = {
+    type: "Office",
+    size: "Extra Large",
+    pattern: "Marbled",
+    color: ["White", "Black"],
+    isComfy: false,
+    picture: "./Furniture/piano.jpg" 
 };
