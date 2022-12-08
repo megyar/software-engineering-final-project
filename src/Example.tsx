@@ -15,6 +15,7 @@ export const Example: FC = () => {
   const furniture = () => {
     return ["Beds", "Couches", "Chairs", "Presets", "Tables", "Toilets", "Extras"];
   };
+  //setSelectFurniture("Beds");
   const toggleDropDown = () => {
     setShowDropDown(!showDropDown);
   };
@@ -24,9 +25,9 @@ export const Example: FC = () => {
     }
   };
   const furnitureSelection = (furniture: string): void => {
-    //setSelectFurniture(furniture);
+    setSelectFurniture(furniture);
     var collection = ({});
-    if (selectFurniture === "Beds") {
+    if (furniture === "Beds") {
       collection = ({
         bed1: { top: 10, left: 110, picture: "./Furniture/bed1.jpg", title: 'bed1', type: 'fbox' },
         bed2: { top: 5, left: 200, picture: "./Furniture/bed2.jpg", title: 'bed2', type: 'fbox' },
@@ -34,7 +35,7 @@ export const Example: FC = () => {
         bed4: { top: 5, left: 400, picture:  "./Furniture/bed4.jpg", title: 'bed4', type: 'fbox'},
       })
     }
-    else if (selectFurniture === "Couches") {
+    else if (furniture === "Couches") {
       collection = ({
         couch1: { top: 10, left: 110, picture: "./Furniture/couch1.jpg", title: 'couch1', type: 'fbox' },
         couch2: { top: 5, left: 200, picture: "./Furniture/couch2.jpg", title: 'couch2', type: 'fbox' },
@@ -45,7 +46,7 @@ export const Example: FC = () => {
  
       })
     }
-    else if (selectFurniture === "Chairs") {
+    else if (furniture === "Chairs") {
       collection = ({
         chair1: { top: 10, left: 110, picture: "./Furniture/chair1.jpg", title: 'chair1', type: 'fbox' },
         chair2: { top: 5, left: 200, picture: "./Furniture/chair2.jpg", title: 'chair2', type: 'fbox' },
@@ -56,7 +57,7 @@ export const Example: FC = () => {
 
       })
     }
-    else if (selectFurniture === "Presets") {
+    else if (furniture === "Presets") {
       collection = ({
         preset1: { top: 10, left: 110, picture: "./Furniture/preset1.jpg", title: 'preset1', type: 'fbox' },
         preset2: { top: 5, left: 200, picture: "./Furniture/preset2.jpg", title: 'preset2', type: 'fbox' },
@@ -68,7 +69,7 @@ export const Example: FC = () => {
 
       })
     }
-    else if (selectFurniture === "Tables") {
+    else if (furniture === "Tables") {
       collection = ({
         table1: { top: 10, left: 110, picture: "./Furniture/table1.jpg", title: 'table1', type: 'fbox' },
         table2: { top: 5, left: 200, picture: "./Furniture/table2.jpg", title: 'table2', type: 'fbox' },
@@ -77,13 +78,13 @@ export const Example: FC = () => {
         table5: { top: 5, left: 500, picture: "./Furniture/table5.jpg", title: 'table5', type: 'fbox' },
       })
     }
-    else if (selectFurniture === "Toilets") {
+    else if (furniture === "Toilets") {
       collection = ({
         toilet1: { top: 10, left: 110, picture: "./Furniture/toilet1.jpg", title: 'toilet1', type: 'fbox' },
         toilet2: { top: 5, left: 200, picture: "./Furniture/toilet2.jpg", title: 'toilet2', type: 'fbox' },
       })
     }
-    else if (selectFurniture === "Extras") {
+    else if (furniture === "Extras") {
       collection = ({
         piano: { top: 10, left: 110, picture: "./Furniture/piano.jpg", title: 'piano', type: 'fbox' },
       })
@@ -100,7 +101,7 @@ export const Example: FC = () => {
       type: string
     }
   }>({
-      blank: { top: 5, left: 400, picture:  "./Furniture/blank.jpg", title: 'blank', type: 'fbox'},
+    blank: {top: 10, left: 10, picture: "./Furniture/blank.jpg", title: 'blank', type: 'fbox'}  
   })
 
   const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
