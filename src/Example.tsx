@@ -13,7 +13,7 @@ export const Example: FC = () => {
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
   const [selectFurniture, setSelectFurniture] = useState<string>("");
   const furniture = () => {
-    return ["Beds", "Couches", "Chairs"];
+    return ["Beds", "Couches", "Chairs", "Presets", "Tables", "Toilets", "Extras"];
   };
   const toggleDropDown = () => {
     setShowDropDown(!showDropDown);
@@ -55,6 +55,38 @@ export const Example: FC = () => {
 
       })
     }
+    else if (selectFurniture === "Presets") {
+      setmenuBoxes({
+        preset1: { top: 10, left: 110, picture: "./Furniture/preset1.jpg", title: 'preset1', type: 'fbox' },
+        preset2: { top: 5, left: 200, picture: "./Furniture/preset2.jpg", title: 'preset2', type: 'fbox' },
+        preset3: { top: 5, left: 300, picture: "./Furniture/preset3.jpg", title: 'preset3', type: 'fbox' },
+        preset4: { top: 5, left: 400, picture:  "./Furniture/preset4.jpg", title: 'preset4', type: 'fbox'},
+        preset5: { top: 5, left: 500, picture: "./Furniture/preset5.jpg", title: 'preset5', type: 'fbox' },
+        preset6: { top: 5, left: 600, picture: "./Furniture/preset6.jpg", title: 'preset6', type: 'fbox' },
+        preset7: { top: 5, left: 700, picture: "./Furniture/preset7.jpg", title: 'preset7', type: 'fbox' },
+
+      })
+    }
+    else if (selectFurniture === "Tables") {
+      setmenuBoxes({
+        table1: { top: 10, left: 110, picture: "./Furniture/table1.jpg", title: 'table1', type: 'fbox' },
+        table2: { top: 5, left: 200, picture: "./Furniture/table2.jpg", title: 'table2', type: 'fbox' },
+        table3: { top: 5, left: 300, picture: "./Furniture/table3.jpg", title: 'table3', type: 'fbox' },
+        table4: { top: 5, left: 400, picture:  "./Furniture/table4.jpg", title: 'table4', type: 'fbox'},
+        table5: { top: 5, left: 500, picture: "./Furniture/table5.jpg", title: 'table5', type: 'fbox' },
+      })
+    }
+    else if (selectFurniture === "Toilets") {
+      setmenuBoxes({
+        toilet1: { top: 10, left: 110, picture: "./Furniture/toilet1.jpg", title: 'toilet1', type: 'fbox' },
+        toilet2: { top: 5, left: 200, picture: "./Furniture/toilet2.jpg", title: 'toilet2', type: 'fbox' },
+      })
+    }
+    else if (selectFurniture === "Extras") {
+      setmenuBoxes({
+        piano: { top: 10, left: 110, picture: "./Furniture/piano.jpg", title: 'piano', type: 'fbox' },
+      })
+    }
   };
 
   const [menuboxes, setmenuBoxes] = useState<{
@@ -66,10 +98,7 @@ export const Example: FC = () => {
       type: string
     }
   }>({
-    bed1: { top: 10, left: 110, picture: "./Furniture/bed1.jpg", title: 'bed1', type: 'fbox' },
-    bed2: { top: 5, left: 200, picture: "./Furniture/bed2.jpg", title: 'bed2', type: 'fbox' },
-    bed3: { top: 5, left: 300, picture: "./Furniture/bed3.jpg", title: 'bed3', type: 'fbox' },
-    bed4: { top: 5, left: 400, picture:  "./Furniture/bed4.jpg", title: 'bed4', type: 'fbox'},
+      blank: { top: 5, left: 400, picture:  "./Furniture/blank.jpg", title: 'blank', type: 'fbox'},
   })
 
   const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
